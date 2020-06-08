@@ -5,10 +5,6 @@ const pt = require('path')
 const koa = require('koa')
 const koaPage = require('../')
 
-const { indexPage } = {
-  indexPage: require('./pages'),
-}
-
 const app = new koa()
 const PORT = 1234
 
@@ -73,7 +69,7 @@ describe('serve page: root', () => {
 
   it('GET / 200 json', async () => {
     let expected = {
-      a: 1,
+      r: Math.random(),
     }
 
     let res = (await fetchData('/', expected)).body
@@ -100,7 +96,7 @@ describe('serve page: root', () => {
 
   it('GET /path/deep/middleware 200 json', async () => {
     let expected = {
-      a: 2,
+      r: Math.random(),
     }
 
     let res = (await fetchData('/path/deep/middleware', expected)).body
@@ -111,7 +107,7 @@ describe('serve page: root', () => {
 
   it('GET /path/deep/returnmiddleware 200 json', async () => {
     let o = {
-      a: 234,
+      r: Math.random(),
     }
     let expected = async (ctx, next) => {
       ctx.body = o
@@ -127,10 +123,10 @@ describe('serve page: root', () => {
 
   it('GET /path 200 json', async () => {
     let expected = {
-      a: 1,
+      r: Math.random(),
     }
 
-    let res = (await fetchData('/', expected)).body
+    let res = (await fetchData('/path', expected)).body
 
     res = JSON.parse(res)
     assert.deepEqual(res, expected)
@@ -146,10 +142,10 @@ describe('serve page: prefix', () => {
 
   it('GET /path 200 json', async () => {
     let expected = {
-      a: 1,
+      r: Math.random(),
     }
 
-    let res = (await fetchData('/', expected)).body
+    let res = (await fetchData('/path', expected)).body
 
     res = JSON.parse(res)
     assert.deepEqual(res, expected)
