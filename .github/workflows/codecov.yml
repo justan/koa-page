@@ -13,6 +13,7 @@ jobs:
         uses: actions/setup-node@v1
       - name: Generate coverage report
         run: |
+          npm install
           npm test
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
