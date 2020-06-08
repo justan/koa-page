@@ -1,8 +1,8 @@
 # koa-page
 
-![npm](https://img.shields.io/npm/v/koa-page)
-![GitHub](https://img.shields.io/github/license/justan/koa-page)
-![Codecov](https://img.shields.io/codecov/c/github/justan/koa-page)
+[![npm](https://img.shields.io/npm/v/koa-page)](https://www.npmjs.com/package/koa-page)
+[![GitHub](https://img.shields.io/github/license/justan/koa-page)](https://github.com/justan/koa-page/blob/master/LICENSE)
+[![Codecov](https://img.shields.io/codecov/c/github/justan/koa-page)](https://codecov.io/github/justan/koa-page)
 
 Serve path with a file.
 
